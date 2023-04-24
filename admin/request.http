@@ -1,6 +1,5 @@
 @product=http://localhost:3000/product
-@id=9
-
+@id=3
 @main=http://localhost:3001/product
 
 ### GET All MAIN PRODUCTS
@@ -24,12 +23,15 @@ content-type: application/json
     "likes": 100000
 }
 
-
 ### GET ONE ADMIN PRODUCT BY ID
 GET {{product}}/{{id}} HTTP/1.1
 
 
-### Update product
+
+
+
+
+### Update product - Not Connected in mongo
 PUT {{product}}/{{id}} HTTP/1.1
 content-type: application/json
 
@@ -39,6 +41,6 @@ content-type: application/json
 }
 
 
-### Add one like to product
+### Add one like to product  not connect to mongo
 POST {{product}}/{{id}}/likes HTTP/1.1
 content-type: application/json
