@@ -1,0 +1,26 @@
+version: '1'
+
+services:
+  
+  server:
+    build: .
+    volumes:
+      - ./:/main
+    env_file:
+      - .env
+    ports:
+      - 3001:3001
+    links:
+      - mongo_db
+    command: ['npm', 'start']
+  
+  mongo_db:
+    image: mongo
+    env_file:
+      - .env
+    ports:
+      - 27017:27017
+    volumes:
+      - ./database:/var/lib/mongodb/data/db
+volumes:
+  database:

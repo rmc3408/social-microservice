@@ -1,4 +1,5 @@
 import { DataSource } from 'typeorm';
+import 'reflect-metadata';
 import * as dotenv from "dotenv";
 import { Product } from './entity/product';
 

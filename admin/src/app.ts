@@ -9,7 +9,7 @@ const PORT = process.env.NODE_PORT || 3000;
 
 const app = express();
 const corsOptions = {
-  origin: ['http://localhost:5433', 'http://localhost:3000', 'http://localhost:4200'],
+  origin: ['http://localhost:5433', 'http://localhost:3000'],
 };
 
 app.use(cors(corsOptions));
@@ -19,5 +19,5 @@ app.use('/product', productsRouter)
 
 
 app.listen(PORT, () => {
-  console.log(`🚀 Server is running on port ${PORT}`);
+  console.log(`🚀 Admin Server is running on port ${PORT}`);
 });

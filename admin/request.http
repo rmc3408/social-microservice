@@ -1,0 +1,44 @@
+@product=http://localhost:3000/product
+@id=9
+
+@main=http://localhost:3001/product
+
+### GET All MAIN PRODUCTS
+GET {{main}} HTTP/1.1
+
+### DELETE FROM ADMIN
+DELETE {{product}}/{{id}} HTTP/1.1
+
+
+### GET All ADMIN PRODUCT
+GET {{product}} HTTP/1.1
+
+
+### CREATE ADMIN PRODUCT
+POST {{product}} HTTP/1.1
+content-type: application/json
+
+{
+    "name": "dildo-Massive",
+    "image": "sex",
+    "likes": 100000
+}
+
+
+### GET ONE ADMIN PRODUCT BY ID
+GET {{product}}/{{id}} HTTP/1.1
+
+
+### Update product
+PUT {{product}}/{{id}} HTTP/1.1
+content-type: application/json
+
+{
+    "image": "Bounce",
+    "likes": 0
+}
+
+
+### Add one like to product
+POST {{product}}/{{id}}/likes HTTP/1.1
+content-type: application/json
